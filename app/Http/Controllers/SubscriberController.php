@@ -9,8 +9,9 @@ use App\Subscriber;
 class SubscriberController extends Controller
 {
     public function index(){
+$subscriber=Subscriber::find(1);
 
-        return view('admin/subscriber/index');
+        return view('admin/subscriber/index', compact('subscriber'));
     }
 
 

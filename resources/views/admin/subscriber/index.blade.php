@@ -1,7 +1,7 @@
 @extends('layout.app')
 @include('template.headerNav')
 
-@if (!empty($subscriber))
+@if (empty($subscriber))
 
 <form action='{{route('subscriber.create')}}' method="post">
 @csrf
@@ -19,7 +19,7 @@
     @csrf
     <div class="container">
     <label for="subscriber Link">Veuillez introduire une URL</label>
-    <input type="text" name="subscriberLink" class="form-control">
+    <input type="text" value='{{$subscriber->subscriberLink}}' name="subscriberLink" class="form-control">
     <button type="submit">Soumettre la modification</button>
 </form>
 
